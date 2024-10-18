@@ -3,6 +3,7 @@
     <el-container>
         <el-header>Cat Gallery</el-header>
 
+        
         <el-main>
             <el-tabs stretch v-model="activeName">
                 <el-tab-pane label="Cats" name="cats" class="catsPane">
