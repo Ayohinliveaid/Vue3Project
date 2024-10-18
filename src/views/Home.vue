@@ -14,8 +14,8 @@
                                      class="cardDiv">
                                     <el-card class="cardStyle">
                                         <img v-if="cat" v-bind:src="cat.url" alt="Cat Image" style="height: 300px;" />
-
                                     </el-card>
+                                
                                     <el-card style="flex:1" class="cardStyle">
                                         <el-button type="primary" class="buttonStyle"
                                             v-on:click="addToFavourites(cat)">favourite</el-button>
