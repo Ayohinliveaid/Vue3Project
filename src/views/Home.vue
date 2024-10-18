@@ -20,7 +20,6 @@
                                         <el-button type="primary" class="buttonStyle"
                                             v-on:click="addToFavourites(cat)">favourite</el-button>
                                         CatID: {{ cat.id }}
-
                                     </el-card>
                                 </div>
                             </el-space>
