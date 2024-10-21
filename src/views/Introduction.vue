@@ -7,7 +7,7 @@
             <li><a href="#sec1">Functions</a></li>
             <li><a href="#sec2">Advantages</a></li>
         </ul>
-        <router-link to="/" class="routerLink">Start Now</router-link>
+        <router-link to="/home" class="routerLink">Start Now</router-link>
     </header>
     <div></div>
     <div id="sec0" class="sec0">
@@ -22,7 +22,7 @@
                 <li>Instant previews for your favorite cat selections</li>
                 <li>Enjoy fast delivery on all image requests.</li>
             </ul>
-            <router-link to="/" class="routerLink">Request Your Cat Image Now</router-link>
+            <router-link to="/home" class="routerLink">Request Your Cat Image Now</router-link>
         </div>
     </div>
     <div id="sec1" class="sec1">sec1: continuing updating!
