@@ -19,10 +19,10 @@ body {
 }
 
 
-/* .el-main {
-  background-color: blanchedalmond;
-  gba(211, 166, 108, 0.691)
-} */
+.el-main {
+  background-color: rgb(247, 239, 231);
+  
+}
 
 .el-tabs .el-tabs__item {
   background-color: rgb(247, 228, 202);
@@ -54,6 +54,19 @@ body {
   border:none;
 
   
+}
+
+.routerLink {
+  line-height: 50px;
+  text-decoration: none;
+  height: 50px;
+  background-color: rgb(232, 209, 179);
+  color: black;
+  /* positon:absolute; */
+  margin-left: auto;
+  margin-right: 50px;
+  border-radius: 7px;
+  padding: 5px;
 }
 
 

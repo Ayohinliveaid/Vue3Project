@@ -32,19 +32,19 @@
             <h2>Functions</h2>
         </div>
         <div class="sec1div">
-            <div>
+            <div style="background-color: #FFCCCB;">
                 <h3>Browse & Enjoy</h3>
                 Instantly request and display beautiful cat images with a click.
             </div>
-            <div>
+            <div style="background-color: lightyellow;">
                 <h3>Save Your Favorites</h3>
                 Easily add any cat image to your favorites collection.
             </div>
-            <div>
+            <div style="background-color: lightgreen;">
                 <h3>Smooth Navigation</h3>
                 Navigate through different sections of the gallery all on a single page.
             </div>
-            <div>
+            <div style="background-color: lightblue;">
                 <h3>Personalize Your Experience</h3>
                 Sign up or log in to save and access your favorite images anytime.
             </div>
@@ -55,19 +55,32 @@
 
     </div>
     <div id="sec2" class="sec2">
-        sec2: continuing updating!
-
-        <div class="gallery-container">
-            <button id="scroll-left">← 左移</button>
-            <div class="gallery" id="gallery">
-                <img src="" alt="Cat 1">
-                <img src="" alt="Cat 2">
-                <img src="" alt="Cat 3">
-                <img src="" alt="Cat 4">
-               
-            </div>
-            <button id="scroll-right">右移 →</button>
+        <!-- sec2: continuing updating! -->
+        <div class="sec2div">
+            <h2>Advantages</h2>
         </div>
+        <!-- 
+        <div class="gallery-container">
+            <button id="scroll-left" v-on:click="this.scrollLeft">← 左移</button>
+            <div class="gallery" id="gallery">
+                <img v-for="img in imgs" v-bind:key="img.alt" v-bind:src="img.src" v-bind:alt="img.alt" />
+
+            </div>
+            <button id="scroll-right" v-on:click="this.scrollRight">右移 →</button>
+        </div> -->
+        <div class="gallery-container">
+            <button id="scroll-left" v-on:click="this.scrollLeft">← Left</button>
+            <div class="gallery" id="gallery">
+                <div v-for="div in divs" v-bind:key="div.id"
+                    v-bind:style="{ backgroundColor: div.color, padding: '10px', borderRadius: '10px' }">
+                    <h3>{{ div.title }}</h3>
+                    <p>{{ div.content }}</p>
+                </div>
+
+            </div>
+            <button id="scroll-right" v-on:click="this.scrollRight">Right →</button>
+        </div>
+
 
     </div>
 </template>
@@ -78,39 +91,51 @@ export default {
     data() {
         return {
             // Define any reactive data for this component
-            itemWidth: 110,
-            galleryElement: null,
+
+            imgs: [
+                { src: "", alt: "i1" },
+                { src: "", alt: "i2" },
+                { src: "", alt: "i3" },
+                { src: "", alt: "i4" },
+                { src: "", alt: "i5" }
+            ],
+            divs: [
+                { id: 0, color: "#FFCCCB", title: "Instant Access to Cat Images", content: "Users can effortlessly request and enjoy beautiful cat images at the click of a button, enhancing their browsing experience" },
+                { id: 1, color: "lightyellow", title: "Favorites Collection", content: "The platform allows users to easily add cat images to a favorites collection, making it simple to curate and revisit preferred images" },
+                { id: 2, color: "lightgreen", title: "Single-Page Navigation", content: "Users benefit from smooth navigation throughout different sections of the gallery on a single page, streamlining their experience without unnecessary page loads" },
+                { id: 3, color: "lightblue", title: "Personalized Experience:", content: " By signing up or logging in, users can save and access their favorite images anytime, providing a more tailored and convenient experience" },
+                // {id:4,color:"purple" }
+            ],
+
         };
     },
-    mounted() {
-        // Lifecycle hook to access DOM elements after the component is mounted
-        this.galleryElement = document.getElementById('gallery');
-        const scrollLeftBtn = document.getElementById('scroll-left');
-        const scrollRightBtn = document.getElementById('scroll-right');
 
-        if (scrollLeftBtn && scrollRightBtn) {
-            scrollLeftBtn.addEventListener('click', this.scrollLeft);
-            scrollRightBtn.addEventListener('click', this.scrollRight);
-        }
-    },
     methods: {
         scrollLeft() {
-            if (this.galleryElement) {
-                this.galleryElement.scrollBy({
-                    left: -this.itemWidth,
-                    behavior: 'smooth'
-                });
-            }
+            var lastItem = this.imgs.pop();
+            this.imgs.unshift(lastItem);
+            var lastItem = this.divs.pop();
+            this.divs.unshift(lastItem);
+            var gallery = document.getElementById('gallery');
+            gallery.scrollBy({
+                left: -270,
+                behavior: 'auto'
+            });
+
         },
         scrollRight() {
-            if (this.galleryElement) {
-                this.galleryElement.scrollBy({
-                    left: this.itemWidth,
-                    behavior: 'smooth'
-                });
-            }
+            var firstItem = this.imgs.shift();
+            this.imgs.push(firstItem);
+            var firstItem = this.divs.shift();
+            this.divs.push(firstItem);
+            var gallery = document.getElementById('gallery');
+            gallery.scrollBy({
+                left: 270,
+                behavior: 'auto'
+            });
+
         }
-    }
+    },
 }
 
 
@@ -118,6 +143,10 @@ export default {
 </script>
 
 <style>
+body{
+    background-color: rgb(252, 246, 240);
+}
+
 .header {
     background-color: antiquewhite;
     display: flex;
@@ -160,20 +189,7 @@ export default {
     color: black;
 }
 
-.routerLink {
-    line-height: 50px;
-    text-decoration: none;
-    height: 50px;
-    background-color: rgb(232, 209, 179);
-    color: black;
-    /* positon:absolute; */
-    margin-left: auto;
-    margin-right: 50px;
-    border-radius: 7px;
-    padding: 5px;
 
-
-}
 
 .routerLink:hover {
     background-color: rgb(213, 173, 120);
@@ -207,6 +223,10 @@ p {
     padding: 20px;
 }
 
+h2 {
+    padding-left: 10px;
+}
+
 .sec0 .routerLink {
     height: 50px;
     width: 240px;
@@ -237,8 +257,8 @@ p {
     display: flex;
 
     justify-content: center;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
 
 }
 
@@ -265,6 +285,11 @@ p {
     margin-top: 70px;
 
 }
+.sec2 .sec2div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .table {
     width: 80vw;
@@ -289,16 +314,13 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    width: 400px;
-    /* 容器的宽度 */
 }
 
 .gallery {
     display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    white-space: nowrap;
+    width: 80vw;
+    overflow-x: hidden;
+    /* scroll-behavior: smooth; */
 }
 
 .gallery img {
@@ -307,10 +329,19 @@ p {
     flex-shrink: 0;
 }
 
-button {
-    background-color: lightgray;
+.gallery div {
+    width: 250px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    height: 300px;
+}
+
+.gallery-container button {
+    background-color: rgb(232, 209, 179);
     border: none;
     padding: 10px;
+    margin: 20px;
     cursor: pointer;
+    border-radius: 3px;
 }
 </style>

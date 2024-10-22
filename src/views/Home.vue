@@ -1,7 +1,11 @@
 <template>
 
     <el-container>
-        <el-header>Cat Gallery</el-header>
+        <el-header>
+            Cat Gallery
+            <router-link to="/" class="routerLink introButton">introduction</router-link>
+
+        </el-header>
         <el-main>
             <el-tabs stretch v-model="activeName">
                 <el-tab-pane label="Cats" name="cats" class="catsPane">
@@ -9,10 +13,11 @@
                         <el-tab-pane label="Main Cats">
                             <el-button type="primary" class="buttonStyle" v-on:click="requestMainCats">
                                 more cats</el-button>
+
                             <el-space direction="vertical" alignment="normal">
                                 <div v-for="(cat, index) in mainCats" v-bind:key="index" class="cardDiv">
                                     <el-card class="cardStyle">
-                                        <img v-if="cat" v-bind:src="cat.url" alt="Cat Image" style="height: 300px;" />
+                                        <img v-if="cat" v-bind:src="cat.url" alt="Cat Image" style="height: 700px;" />
                                     </el-card>
 
 
@@ -275,6 +280,15 @@ export default {
     font-size: 40px;
 
 } */
+ .introButton{
+    position: absolute;
+    right:0;
+    top:0;
+    margin-right: 0;
+    color:rgba(82, 56, 23, 0.691);
+   
+    
+ }
 
 
 
@@ -290,11 +304,13 @@ export default {
 }
 
 .el-button.buttonStyle {
-    background-color: rgba(211, 166, 108, 0.691);
+    background-color: rgb(233, 208, 176);
     float: right;
     border: none;
     color: rgba(82, 56, 23, 0.691);
     margin-bottom: 10px;
+    /* position:absolute;
+    right:10px; */
 }
 
 .el-button.buttonStyle:hover {
@@ -305,7 +321,7 @@ export default {
 
 .cardDiv {
     display: flex;
-    width: 750px;
+    width: 1200px;
 }
 
 .el-card.cardStyle {
@@ -313,4 +329,5 @@ export default {
     border: none;
     margin-left: 10px;
 }
+
 </style>
