@@ -38,7 +38,7 @@
                             <el-space direction="vertical" alignment="normal">
                                 <div v-for="(cat, index) in animatedCats" v-bind:key="index" class="cardDiv">
                                     <el-card class="cardStyle">
-                                        <img v-if="cat" v-bind:src="cat.url" alt="Cat Image" style="height: 300px;" />
+                                        <img v-if="cat" v-bind:src="cat.url" alt="Cat Image" style="height: 280px;" />
 
                                     </el-card>
                                     <el-card style="flex:1" class="cardStyle">
@@ -314,18 +314,18 @@ export default {
 }
 
 .el-button.buttonStyle:hover {
-    background-color: rgba(188, 133, 61, 0.691);
+    background-color: rgba(204, 158, 98, 0.691);
     /* Active background color */
     color: rgba(0, 0, 0, 0.691);
 }
 
 .cardDiv {
     display: flex;
-    width: 1200px;
+    width: 1500px;
 }
 
 .el-card.cardStyle {
-    background-color: blanchedalmond;
+    background-color: rgb(255, 245, 228);
     border: none;
     margin-left: 10px;
 }

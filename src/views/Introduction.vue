@@ -158,7 +158,7 @@ body{
 
 .header ul {
     display: flex;
-    margin-left: 70px;
+    margin-left: 100px;
     margin-top: 0;
     /* margin-right: 50px; */
     padding-bottom: 0;
@@ -167,7 +167,7 @@ body{
 }
 
 .header ul li {
-    margin-right: 14vw;
+    margin-right: 20vw;
     list-style-type: none;
     height: 70px;
     /* display:flex;
@@ -234,7 +234,7 @@ h2 {
     border: none;
     border-radius: 4px;
     padding-left: 30px;
-    padding-right: 30px;
+    padding-right: 10px;
     margin-left: 20px;
     margin-top: auto;
 }
@@ -318,7 +318,7 @@ h2 {
 
 .gallery {
     display: flex;
-    width: 80vw;
+    width:870px;
     overflow-x: hidden;
     /* scroll-behavior: smooth; */
 }
@@ -334,6 +334,7 @@ h2 {
     margin-right: 20px;
     flex-shrink: 0;
     height: 300px;
+    box-sizing: content-box;
 }
 
 .gallery-container button {
