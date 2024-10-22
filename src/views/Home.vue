@@ -279,7 +279,7 @@ export default {
 
 
 .window {
-    background-color: rgba(219, 192, 156, 0.691);
+    background-color: antiquewhite;
     height: 48vh;
     width: 50vh;
     position: absolute;
@@ -309,7 +309,7 @@ export default {
 }
 
 .el-card.cardStyle {
-    background-color: rgba(220, 196, 166, 0.691);
+    background-color: blanchedalmond;
     border: none;
     margin-left: 10px;
 }
