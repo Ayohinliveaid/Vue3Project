@@ -38,7 +38,7 @@
                             <el-space direction="vertical" alignment="normal">
                                 <div v-for="(cat, index) in animatedCats" v-bind:key="index" class="cardDiv">
                                     <el-card class="cardStyle">
-                                        <img v-if="cat" v-bind:src="cat.url" alt="Cat Image" style="height: 280px;" />
+                                        <img v-if="cat" v-bind:src="cat.url" alt="Cat Image" style="height: 700px;" />
 
                                     </el-card>
                                     <el-card style="flex:1" class="cardStyle">
