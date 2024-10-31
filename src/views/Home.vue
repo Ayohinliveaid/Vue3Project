@@ -10,7 +10,7 @@
             <el-tabs stretch v-model="activeName">
                 <el-tab-pane label="Cats" name="cats" class="catsPane">
                     <el-tabs tab-position='left' style="margin-top: 10px;height: 100%">
-                        <el-tab-pane label="Main Cats">
+                        <el-tab-pane id="mainPane" label="Main Cats">
                             <el-button type="primary" class="buttonStyle" v-on:click="requestMainCats">
                                 more cats</el-button>
 
@@ -21,7 +21,7 @@
                                     </el-card>
 
 
-                                    <el-card style="flex:1" class="cardStyle">
+                                    <el-card style="flex:1" class="cardStyle0">
                                         <el-button type="primary" class="buttonStyle"
                                             v-on:click="addToFavourites(cat)">favourite</el-button>
                                         CatID: {{ cat.id }}
@@ -41,7 +41,7 @@
                                         <img v-if="cat" v-bind:src="cat.url" alt="Cat Image" style="height: 700px;" />
 
                                     </el-card>
-                                    <el-card style="flex:1" class="cardStyle">
+                                    <el-card style="flex:1" class="cardStyle0">
                                         <el-button type="primary" class="buttonStyle"
                                             v-on:click="addToFavourites(cat)">favourite</el-button>
                                         CatID: {{ cat.id }}
@@ -54,7 +54,7 @@
 
                 </el-tab-pane>
 
-                <el-tab-pane label="Favourites" name="favourites" style="height: 100vh">
+                <el-tab-pane label="Favourites" name="favourites" >
 
                     <div v-if="!isLoggedIn"> Login to save and access your favourites!</div>
                     <div class="window" v-if="!isLoggedIn">
@@ -119,12 +119,12 @@
 
                     <el-space direction="vertical" alignment="normal" v-if="isLoggedIn">
                         <div v-for="(cat, index) in favouriteCats" v-bind:key="index"
-                            style="display: flex; width:600px;">
+                            class="cardDiv">
                             <el-card class="cardStyle">
-                                <img v-if="cat" v-bind:src="cat.url" alt="Cat Image" style="height: 200px;" />
+                                <img v-if="cat" v-bind:src="cat.url" alt="Cat Image" style="height: 700px;" />
 
                             </el-card>
-                            <el-card style="flex:1" class="cardStyle">
+                            <el-card style="flex:1" class="cardStyle0">
 
                                 <el-button type="primary" class="buttonStyle"
                                     v-on:click="removeFromFavourites(cat)">Unfavorite</el-button>
@@ -220,8 +220,30 @@ export default {
 
 
             } else {
-                this.favouriteCats.push(cat);
                 // alert("The cat has been added to your favorites");
+                var note = document.createElement("div");
+                note.style.position = "fixed";
+                note.style.height = "100px";
+                note.style.width = "450px";
+                note.style.top = "50%";
+                note.style.left = "50%";
+                note.style.zIndex="9999";
+                note.style.transform = "translate(-50%, -50%)";
+                note.style.backgroundColor = "white";
+                note.style.display = "flex";
+                note.style.justifyContent = "center";  
+                note.style.alignItems = "center";      
+                note.style.borderRadius="10px";
+                note.style.opacity = "0.8"; 
+                note.innerText = "The cat has been added to favourite gallery successfully";
+                var body = document.querySelector("body");
+                body.appendChild(note);
+                setTimeout(function () {
+                    body.removeChild(note);
+
+                }, 1000);
+                this.favouriteCats.push(cat);
+
             }
 
         },
@@ -280,15 +302,15 @@ export default {
     font-size: 40px;
 
 } */
- .introButton{
+.introButton {
     position: absolute;
-    right:0;
-    top:0;
+    right: 0;
+    top: 0;
     margin-right: 0;
-    color:rgba(82, 56, 23, 0.691);
-   
-    
- }
+    color: rgba(82, 56, 23, 0.691);
+
+
+}
 
 
 
@@ -325,9 +347,15 @@ export default {
 }
 
 .el-card.cardStyle {
+    background-color: rgb(173, 247, 173);
+    border: none;
+    margin-left: 10px;
+    /* box-shadow: 3px 3px 100px 100px rgb(173, 247, 173); */
+}
+
+.el-card.cardStyle0 {
     background-color: rgb(255, 245, 228);
     border: none;
     margin-left: 10px;
 }
-
 </style>

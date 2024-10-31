@@ -190,11 +190,6 @@ body{
 }
 
 
-
-.routerLink:hover {
-    background-color: rgb(213, 173, 120);
-}
-
 .sec0 {
     height: 500px;
     padding-top: 70px;
@@ -237,6 +232,10 @@ h2 {
     padding-right: 10px;
     margin-left: 20px;
     margin-top: auto;
+}
+
+.routerLink:hover {
+    background-color: rgb(213, 173, 120);
 }
 
 
