@@ -57,14 +57,18 @@
                 <el-tab-pane label="Favourites" name="favourites" >
 
                     <div v-if="!isLoggedIn"> Login to save and access your favourites!</div>
-                    <div class="window" v-if="!isLoggedIn">
+
+
+
+                    <div class="myWindow" v-if="!isLoggedIn">
 
                         <el-tabs stretch>
                             <el-tab-pane label="Login">
-                                <el-form label-width="100px" style="width:90%;margin-top: 25px;"
+                                <el-form label-width="100px" style="width:90%x;margin-top: 25px;margin-right: 68px;"
                                     v-bind:model="loginForm" v-bind:rules="loginRules" ref="loginForm">
                                     <el-form-item label="E-mail" prop="email">
                                         <el-input v-model="loginForm.email" clearable></el-input>
+                                  
 
                                     </el-form-item>
                                     <el-form-item label="Password" prop="password">
@@ -81,7 +85,7 @@
 
                             </el-tab-pane>
                             <el-tab-pane label="Sign Up">
-                                <el-form label-width="100px" style="width:90%;margin-top: 25px;">
+                                <el-form label-width="100px" style="width:90%;margin-top: 25px;margin-right: 900px;">
                                     <el-form-item label="E-mail">
                                         <el-input></el-input>
 
@@ -314,15 +318,16 @@ export default {
 
 
 
-.window {
+.myWindow {
     background-color: antiquewhite;
-    height: 48vh;
-    width: 50vh;
-    position: absolute;
-    top: 35%;
+    height: 40vh;
+    width: 60vh;
+    position: fixed;
+    /* positon:absolute;why absolute make the div non-visible? not compatible with element plus*/
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    z-index: 1000; /* Ensure visibility */
 }
 
 .el-button.buttonStyle {
