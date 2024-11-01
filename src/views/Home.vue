@@ -237,7 +237,7 @@ export default {
                 note.style.display = "flex";
                 note.style.justifyContent = "center";  
                 note.style.alignItems = "center";      
-                note.style.borderRadius="10px";
+                note.style.borderRadius="7px";
                 note.style.opacity = "0.8"; 
                 note.innerText = "The cat has been added to favourite gallery successfully";
                 var body = document.querySelector("body");
