@@ -60,7 +60,7 @@
 
 
 
-                    <div class="myWindow" v-if="!isLoggedIn">
+                    <div class="window" v-if="!isLoggedIn">
 
                         <el-tabs stretch>
                             <el-tab-pane label="Login">
@@ -318,7 +318,7 @@ export default {
 
 
 
-.myWindow {
+.window {
     background-color: antiquewhite;
     height: 40vh;
     width: 60vh;
@@ -327,7 +327,6 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1000; /* Ensure visibility */
 }
 
 .el-button.buttonStyle {
