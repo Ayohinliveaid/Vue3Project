@@ -239,7 +239,7 @@ export default {
                 note.style.alignItems = "center";      
                 note.style.borderRadius="7px";
                 note.style.opacity = "0.8"; 
-                note.innerText = "The cat has been added to favourite gallery successfully";
+                note.innerText = "Save successful";
                 var body = document.querySelector("body");
                 body.appendChild(note);
                 setTimeout(function () {
