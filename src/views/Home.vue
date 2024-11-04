@@ -56,7 +56,7 @@
 
                 <el-tab-pane label="Favourites" name="favourites" >
 
-                    <div v-if="!isLoggedIn"> Login to save and access your favourites!</div>
+                    <h1 v-if="!isLoggedIn"> Login to save and access your favourites!</h1>
 
 
 
@@ -115,8 +115,8 @@
 
                     </div>
 
-                    <div v-if="isLoggedIn == true && favouriteCats.length == 0">Add your favourites from "Cats" panel!
-                    </div>
+                    <h1 v-if="isLoggedIn == true && favouriteCats.length == 0">Add your favourites from "Cats" panel!
+                    </h1>
 
 
 
@@ -143,7 +143,7 @@
                 </el-tab-pane>
 
                 <el-tab-pane label="Me" name="me" v-if="isLoggedIn">
-                    Wellcome {{ loginForm.email }}!
+                    <h1>Wellcome {{ loginForm.email }}!</h1>
                     <el-button type="primary" v-if="isLoggedIn" v-on:click="logout"
                         class="buttonStyle">logout</el-button>
 
