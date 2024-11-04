@@ -56,7 +56,7 @@
 
                 <el-tab-pane label="Favourites" name="favourites" >
 
-                    <h1 v-if="!isLoggedIn"> Login to save and access your favourites!</h1>
+                    <span v-if="!isLoggedIn"> Login to save and access your favourites!</span>
 
 
 
