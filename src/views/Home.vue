@@ -80,7 +80,7 @@
                                             v-on:click="login">Login</el-button>
 
                                     </el-form-item>
-                                    (Test login with any input)
+                                    (Test login function with any input)
                                 </el-form>
 
                             </el-tab-pane>
