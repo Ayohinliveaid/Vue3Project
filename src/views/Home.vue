@@ -229,7 +229,7 @@ export default {
                 note.style.position = "fixed";
                 note.style.height = "100px";
                 note.style.width = "450px";
-                note.style.top = "50%";
+                note.style.top = "80%";
                 note.style.left = "50%";
                 note.style.zIndex="9999";
                 note.style.transform = "translate(-50%, -50%)";
